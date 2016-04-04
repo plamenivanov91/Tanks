@@ -6,12 +6,22 @@ public class TankMovement : MonoBehaviour {
 	public float movementSpeed = 0.05f;
 	public float rotationSpeed = 1.5f;
 	private Transform tankTransforom;
+	private Transform tankCannonTransform;
+	public GameObject tankCannon;
 
 	void Start () {
 		tankTransforom = GetComponent<Transform> ();
+		tankCannonTransform = tankCannon.GetComponent<Transform> ();
 	}
 
 	void Update () {
+
+		//tankCannonTransform.Translate (tankTransforom.position);
+//		tankCannonTransform.position.x = tankTransforom.position.x;
+//		tankCannonTransform.position.y = tankTransforom.position.y;
+//		tankCannonTransform.position.z = tankTransforom.position.z;
+
+
 		//Going Forward
 		if (Input.GetKey("w")) {
 			tankTransforom.Translate (Vector2.up * movementSpeed);
